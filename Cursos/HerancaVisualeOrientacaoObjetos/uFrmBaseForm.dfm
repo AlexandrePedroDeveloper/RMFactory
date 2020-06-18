@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FrmBase: TFrmBase
   Left = 0
   Top = 0
   AlphaBlend = True
   AlphaBlendValue = 0
-  Caption = 'Form1'
+  Caption = 'BaseForm'
   ClientHeight = 484
   ClientWidth = 762
   Color = clBtnFace
