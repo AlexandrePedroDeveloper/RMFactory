@@ -3,13 +3,13 @@
 	<Transactions>
     <Transaction>2016/02/24 14:57:31.000.608,=C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.pas</Transaction>
     <Transaction>2016/02/25 17:58:45.000.881,=C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.pas</Transaction>
-    <Transaction>2016/02/25 17:59:03.000.525,C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.pas=C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.pas</Transaction>
-    <Transaction>2016/02/25 17:59:03.000.525,C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.dfm=C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.dfm</Transaction>
-    <Transaction>2016/02/25 17:59:07.000.423,C:\Users\carre\Documents\Embarcadero\Studio\Projects\Project9.dproj=C:\Users\carre\Desktop\Curso POO\CursoPOO.dproj</Transaction>
-    <Transaction>2016/02/25 17:59:18.000.138,C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.dfm=C:\Users\carre\Desktop\Curso POO\uFrmPrincipal.dfm</Transaction>
-    <Transaction>2016/02/25 17:59:18.000.138,C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.pas=C:\Users\carre\Desktop\Curso POO\uFrmPrincipal.pas</Transaction>
+    <Transaction>2016/02/25 17:59:03.000.525,C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.pas=C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.pas</Transaction>
+    <Transaction>2016/02/25 17:59:03.000.525,C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.dfm=C:\Users\carre\Documents\Embarcadero\Studio\Projects\Unit11.dfm</Transaction>
+    <Transaction>2016/02/25 17:59:07.000.423,C:\Users\carre\Desktop\Curso POO\CursoPOO.dproj=C:\Users\carre\Documents\Embarcadero\Studio\Projects\Project9.dproj</Transaction>
+    <Transaction>2016/02/25 17:59:18.000.138,C:\Users\carre\Desktop\Curso POO\uFrmPrincipal.pas=C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.pas</Transaction>
+    <Transaction>2016/02/25 17:59:18.000.138,C:\Users\carre\Desktop\Curso POO\uFrmPrincipal.dfm=C:\Users\carre\Desktop\Curso POO\uFrmPrinciapl.dfm</Transaction>
     <Transaction>2016/02/25 17:59:35.000.842,=C:\Users\carre\Desktop\Curso POO\Unit1.pas</Transaction>
-    <Transaction>2016/02/25 17:59:42.000.251,C:\Users\carre\Desktop\Curso POO\Unit1.pas=C:\Users\carre\Desktop\Curso POO\uFrmBaseForm.pas</Transaction>
-    <Transaction>2016/02/25 17:59:42.000.251,C:\Users\carre\Desktop\Curso POO\Unit1.dfm=C:\Users\carre\Desktop\Curso POO\uFrmBaseForm.dfm</Transaction>
+    <Transaction>2016/02/25 17:59:42.000.251,C:\Users\carre\Desktop\Curso POO\uFrmBaseForm.pas=C:\Users\carre\Desktop\Curso POO\Unit1.pas</Transaction>
+    <Transaction>2016/02/25 17:59:42.000.251,C:\Users\carre\Desktop\Curso POO\uFrmBaseForm.dfm=C:\Users\carre\Desktop\Curso POO\Unit1.dfm</Transaction>
   </Transactions>
 </BorlandProject>
