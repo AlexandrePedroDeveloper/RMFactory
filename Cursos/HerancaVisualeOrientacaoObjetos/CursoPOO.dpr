@@ -2,15 +2,15 @@ program CursoPOO;
 
 uses
   Vcl.Forms,
-  uFrmPrincipal in 'uFrmPrincipal.pas' {Form11},
-  uFrmBaseForm in 'uFrmBaseForm.pas' {Form1};
+  uFrmPrincipal in 'uFrmPrincipal.pas' {FrmPrincipal},
+  uFrmBaseForm in 'uFrmBaseForm.pas' {FrmBase},
+  uFrmBaseCRUD in 'uFrmBaseCRUD.pas' {FrmBaseCRUD};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm11, Form11);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
 end.
