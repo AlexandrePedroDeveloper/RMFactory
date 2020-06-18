@@ -15,8 +15,6 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Width = 956
     Height = 19
     Panels = <>
-    ExplicitTop = 508
-    ExplicitWidth = 902
   end
   object PnCaption: TPanel [1]
     Left = 0
@@ -27,7 +25,6 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Color = 9328397
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 912
     object Image1: TImage
       Left = 1
       Top = 1
@@ -64,9 +61,6 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Color = clWhite
     ParentBackground = False
     TabOrder = 2
-    ExplicitLeft = -232
-    ExplicitTop = 54
-    ExplicitWidth = 912
     object SpeedButton1: TSpeedButton
       Left = 10
       Top = 5
@@ -150,14 +144,10 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     TabOrder = 3
     object tbCrud: TTabSheet
       Caption = 'tbCrud'
-      ExplicitWidth = 904
-      ExplicitHeight = 377
     end
     object tbQuery: TTabSheet
       Caption = 'tbQuery'
       ImageIndex = 1
-      ExplicitWidth = 904
-      ExplicitHeight = 377
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -165,7 +155,6 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
         Height = 49
         Align = alTop
         TabOrder = 0
-        ExplicitTop = -6
         object SpeedButton9: TSpeedButton
           Left = 416
           Top = 7
@@ -250,7 +239,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Left = 612
     Top = 328
     Bitmap = {
-      494C010111005000240120002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010111005000040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000A000000001002000000000000040
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2902,7 +2891,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Left = 609
     Top = 232
     Bitmap = {
-      494C010102000400B40110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010102000400040010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
