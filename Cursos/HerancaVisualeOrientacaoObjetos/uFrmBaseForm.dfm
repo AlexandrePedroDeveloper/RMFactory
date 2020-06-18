@@ -1,9 +1,9 @@
-object FrmBase: TFrmBase
+object FrmBaseForm: TFrmBaseForm
   Left = 0
   Top = 0
   AlphaBlend = True
   AlphaBlendValue = 0
-  Caption = 'BaseForm'
+  Caption = 'FrmBaseForm'
   ClientHeight = 484
   ClientWidth = 762
   Color = clBtnFace
@@ -22,14 +22,14 @@ object FrmBase: TFrmBase
     Enabled = False
     Interval = 10
     OnTimer = FadeinTimer
-    Left = 384
-    Top = 136
+    Left = 344
+    Top = 144
   end
   object FadeOut: TTimer
     Enabled = False
     Interval = 10
     OnTimer = FadeOutTimer
-    Left = 464
-    Top = 136
+    Left = 424
+    Top = 144
   end
 end
