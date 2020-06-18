@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
 
 type
-  TFrmBase = class(TForm)
+  TFrmBaseForm = class(TForm)
     Fadein: TTimer;
     FadeOut: TTimer;
     procedure FadeinTimer(Sender: TObject);
@@ -23,26 +23,26 @@ type
   end;
 
 var
-  FrmBase: TFrmBase;
+  FrmBaseForm: TFrmBaseForm;
 
 implementation
 
 {$R *.dfm}
 
-procedure TFrmBase.FadeinTimer(Sender: TObject);
+procedure TFrmBaseForm.FadeinTimer(Sender: TObject);
 begin
   AlphaBlendValue := AlphaBlendValue + 15;
     FadeIn.Enabled := not (AlphaBlendValue = 255);
 end;
 
-procedure TFrmBase.FadeOutTimer(Sender: TObject);
+procedure TFrmBaseForm.FadeOutTimer(Sender: TObject);
 begin
   AlphaBlendValue := AlphaBlendValue - 15;
   if AlphaBlendValue = 0 then
     Close;
 end;
 
-procedure TFrmBase.FormKeyDown(Sender: TObject; var Key: Word;
+procedure TFrmBaseForm.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
  case key of
@@ -51,7 +51,7 @@ begin
   end;
 end;
 
-procedure TFrmBase.FormShow(Sender: TObject);
+procedure TFrmBaseForm.FormShow(Sender: TObject);
 begin
   Caption := GetTitulo;
 end;

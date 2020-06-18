@@ -3,8 +3,10 @@ program CursoPOO;
 uses
   Vcl.Forms,
   uFrmPrincipal in 'uFrmPrincipal.pas' {FrmPrincipal},
-  uFrmBaseForm in 'uFrmBaseForm.pas' {FrmBase},
-  uFrmBaseCRUD in 'uFrmBaseCRUD.pas' {FrmBaseCRUD};
+  uFrmBaseForm in 'uFrmBaseForm.pas' {FrmBaseForm},
+  uFrmBaseCRUD in 'uFrmBaseCRUD.pas' {FrmBaseCRUD},
+  Vcl.Themes,
+  Vcl.Styles;
 
 {$R *.res}
 
