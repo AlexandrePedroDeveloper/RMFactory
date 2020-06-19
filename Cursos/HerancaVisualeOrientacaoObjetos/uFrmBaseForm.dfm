@@ -19,7 +19,6 @@ object FrmBaseForm: TFrmBaseForm
   PixelsPerInch = 96
   TextHeight = 13
   object Fadein: TTimer
-    Enabled = False
     Interval = 10
     OnTimer = FadeinTimer
     Left = 344

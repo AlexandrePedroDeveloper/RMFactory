@@ -9,7 +9,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
   ExplicitHeight = 630
   PixelsPerInch = 96
   TextHeight = 13
-  object StatusBar1: TStatusBar [0]
+  object StBrInfo: TStatusBar [0]
     Left = 0
     Top = 582
     Width = 956
@@ -66,7 +66,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       Top = 5
       Width = 48
       Height = 48
-      Action = Action1
+      Action = Ac_Incluir
       Flat = True
       Layout = blGlyphTop
     end
@@ -75,7 +75,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       Top = 5
       Width = 48
       Height = 48
-      Action = Action6
+      Action = Ac_Excluir
       Flat = True
       Layout = blGlyphTop
     end
@@ -84,16 +84,16 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       Top = 5
       Width = 48
       Height = 48
-      Action = Action3
+      Action = Ac_Editar
       Flat = True
       Layout = blGlyphTop
     end
     object SpeedButton4: TSpeedButton
       Left = 215
-      Top = 5
+      Top = 6
       Width = 48
       Height = 48
-      Action = Action4
+      Action = Ac_Visualizar
       Flat = True
       Layout = blGlyphTop
     end
@@ -102,25 +102,25 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       Top = 5
       Width = 48
       Height = 48
-      Action = Action5
+      Action = Ac_Imprimir
       Flat = True
       Layout = blGlyphTop
     end
     object SpeedButton6: TSpeedButton
-      Left = 382
+      Left = 398
       Top = 6
       Width = 48
       Height = 48
-      Action = Action2
+      Action = Ac_Cancelar
       Flat = True
       Layout = blGlyphTop
     end
     object SpeedButton7: TSpeedButton
-      Left = 452
+      Left = 460
       Top = 6
       Width = 48
       Height = 48
-      Action = Action7
+      Action = Ac_Salvar
       Flat = True
       Layout = blGlyphTop
     end
@@ -129,7 +129,43 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       Top = 6
       Width = 48
       Height = 48
-      Action = Action8
+      Action = Ac_Fechar
+      Flat = True
+      Layout = blGlyphTop
+    end
+    object SpeedButton12: TSpeedButton
+      Left = 744
+      Top = 6
+      Width = 48
+      Height = 48
+      Action = Ac_Ultimo
+      Flat = True
+      Layout = blGlyphTop
+    end
+    object SpeedButton11: TSpeedButton
+      Left = 690
+      Top = 6
+      Width = 48
+      Height = 48
+      Action = Ac_Proximo
+      Flat = True
+      Layout = blGlyphTop
+    end
+    object SpeedButton10: TSpeedButton
+      Left = 648
+      Top = 6
+      Width = 48
+      Height = 48
+      Action = Ac_Anterior
+      Flat = True
+      Layout = blGlyphTop
+    end
+    object SpeedButton9: TSpeedButton
+      Left = 600
+      Top = 6
+      Width = 48
+      Height = 48
+      Action = Ac_Primeiro
       Flat = True
       Layout = blGlyphTop
     end
@@ -155,39 +191,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
         Height = 49
         Align = alTop
         TabOrder = 0
-        object SpeedButton9: TSpeedButton
-          Left = 416
-          Top = 7
-          Width = 36
-          Height = 36
-          Action = Action10
-          Flat = True
-        end
-        object SpeedButton10: TSpeedButton
-          Left = 464
-          Top = 7
-          Width = 36
-          Height = 36
-          Action = Action9
-          Flat = True
-        end
-        object SpeedButton11: TSpeedButton
-          Left = 506
-          Top = 7
-          Width = 36
-          Height = 36
-          Action = Action11
-          Flat = True
-        end
-        object SpeedButton12: TSpeedButton
-          Left = 560
-          Top = 7
-          Width = 36
-          Height = 36
-          Action = Action12
-          Flat = True
-        end
-        object ButtonedEdit1: TButtonedEdit
+        object EdtPesquisa: TButtonedEdit
           Left = 6
           Top = 16
           Width = 364
@@ -198,7 +202,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
           RightButton.ImageIndex = 1
           RightButton.Visible = True
           TabOrder = 0
-          Text = 'ButtonedEdit1'
+          TextHint = 'Informe um valor para pesquisa'
         end
       end
       object DbGrQuery: TDBGrid
@@ -207,6 +211,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
         Width = 948
         Height = 392
         Align = alClient
+        DataSource = DsCrud
         Options = [dgTitles, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
         TabOrder = 1
         TitleFont.Charset = DEFAULT_CHARSET
@@ -218,20 +223,22 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     end
   end
   inherited Fadein: TTimer
-    Left = 312
-    Top = 248
+    Left = 336
+    Top = 240
   end
   inherited FadeOut: TTimer
     Left = 392
     Top = 240
   end
   object DsQuery: TDataSource
-    Left = 240
-    Top = 336
+    DataSet = FDQuery1
+    Left = 296
+    Top = 328
   end
   object DsCrud: TDataSource
-    Left = 456
-    Top = 344
+    DataSet = ClienteTable
+    Left = 400
+    Top = 328
   end
   object ImgActions: TImageList
     Height = 32
@@ -239,7 +246,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Left = 612
     Top = 328
     Bitmap = {
-      494C010111005000040020002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C0101110050002C0120002000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000080000000A000000001002000000000000040
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -2891,7 +2898,7 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
     Left = 609
     Top = 232
     Bitmap = {
-      494C010102000400040010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010102000400BC0110001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -3030,57 +3037,107 @@ inherited FrmBaseCRUD: TFrmBaseCRUD
       3FFFFE0300000000FFFFFF8F0000000000000000000000000000000000000000
       000000000000}
   end
-  object ActionList1: TActionList
+  object Acoes: TActionList
     Images = ImgActions
-    Left = 504
-    Top = 232
-    object Action1: TAction
-      Caption = 'Action1'
+    Left = 528
+    Top = 328
+    object Ac_Incluir: TAction
+      Category = 'CRUD'
+      Caption = 'Incluir'
       ImageIndex = 0
+      ShortCut = 113
+      OnExecute = Ac_IncluirExecute
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action2: TAction
-      Caption = 'Action2'
+    object Ac_Cancelar: TAction
+      Category = 'CRUD'
+      Caption = 'Cancelar'
       ImageIndex = 2
+      ShortCut = 114
+      OnExecute = Ac_CancelarExecute
+      OnUpdate = Ac_SalvarUpdate
     end
-    object Action3: TAction
-      Caption = 'Action3'
+    object Ac_Editar: TAction
+      Category = 'CRUD'
+      Caption = 'Editar'
       ImageIndex = 6
+      ShortCut = 115
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action4: TAction
-      Caption = 'Action4'
+    object Ac_Visualizar: TAction
+      Category = 'CRUD'
+      Caption = 'Visualizar'
       ImageIndex = 5
+      ShortCut = 116
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action5: TAction
-      Caption = 'Action5'
+    object Ac_Imprimir: TAction
+      Category = 'CRUD'
+      Caption = 'Imprimir'
       ImageIndex = 12
+      ShortCut = 117
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action6: TAction
-      Caption = 'Action6'
+    object Ac_Excluir: TAction
+      Category = 'CRUD'
+      Caption = 'Excluir'
       ImageIndex = 3
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action7: TAction
-      Caption = 'Action7'
+    object Ac_Salvar: TAction
+      Category = 'CRUD'
+      Caption = 'Salvar'
       ImageIndex = 11
+      OnUpdate = Ac_SalvarUpdate
     end
-    object Action8: TAction
-      Caption = 'Action8'
+    object Ac_Fechar: TAction
+      Caption = 'Fechar'
       ImageIndex = 4
     end
-    object Action9: TAction
-      Caption = 'Action9'
+    object Ac_Anterior: TAction
+      Category = 'Navega'#231#227'o'
+      Caption = 'Anterior'
       ImageIndex = 13
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action10: TAction
-      Caption = 'Action10'
+    object Ac_Primeiro: TAction
+      Category = 'Navega'#231#227'o'
+      Caption = 'Primeiro'
       ImageIndex = 14
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action11: TAction
-      Caption = 'Action11'
+    object Ac_Proximo: TAction
+      Category = 'Navega'#231#227'o'
+      Caption = 'Pr'#243'ximo'
       ImageIndex = 15
+      OnUpdate = Ac_IncluirUpdate
     end
-    object Action12: TAction
-      Caption = 'Action12'
+    object Ac_Ultimo: TAction
+      Category = 'Navega'#231#227'o'
+      Caption = #218'ltimo'
       ImageIndex = 16
+      OnUpdate = Ac_IncluirUpdate
     end
+  end
+  object MytesteConnection: TFDConnection
+    Params.Strings = (
+      'ConnectionDef=MyTeste')
+    LoginPrompt = False
+    Left = 175
+    Top = 243
+  end
+  object ClienteTable: TFDQuery
+    Connection = MytesteConnection
+    SQL.Strings = (
+      'SELECT * FROM test.cliente')
+    Left = 175
+    Top = 291
+  end
+  object FDQuery1: TFDQuery
+    Connection = MytesteConnection
+    SQL.Strings = (
+      'SELECT * FROM test.cliente')
+    Left = 495
+    Top = 259
   end
 end
