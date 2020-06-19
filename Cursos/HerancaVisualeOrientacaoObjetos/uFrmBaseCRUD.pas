@@ -7,16 +7,20 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uFrmBaseForm, Data.DB, Vcl.ComCtrls,
   Vcl.ExtCtrls, System.Generics.Collections, Vcl.Grids, Vcl.DBGrids,
   Vcl.StdCtrls, Vcl.Buttons, System.Actions, Vcl.ActnList, System.ImageList,
-  Vcl.ImgList;
+  Vcl.ImgList, FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Error,
+  FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool,
+  FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MySQL, FireDAC.Phys.MySQLDef,
+  FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
 
 type
   TFrmBaseCRUD = class(TFrmBaseForm)
-    StatusBar1: TStatusBar;
+    StBrInfo: TStatusBar;
     DsQuery: TDataSource;
     DsCrud: TDataSource;
     ImgActions: TImageList;
     Img: TImageList;
-    ActionList1: TActionList;
+    Acoes: TActionList;
     PnCaption: TPanel;
     Image1: TImage;
     Label1: TLabel;
@@ -33,26 +37,33 @@ type
     tbCrud: TTabSheet;
     tbQuery: TTabSheet;
     Panel1: TPanel;
-    ButtonedEdit1: TButtonedEdit;
-    SpeedButton9: TSpeedButton;
-    SpeedButton10: TSpeedButton;
-    SpeedButton11: TSpeedButton;
-    SpeedButton12: TSpeedButton;
+    EdtPesquisa: TButtonedEdit;
     DbGrQuery: TDBGrid;
-    Action1: TAction;
-    Action2: TAction;
-    Action3: TAction;
-    Action4: TAction;
-    Action5: TAction;
-    Action6: TAction;
-    Action7: TAction;
-    Action8: TAction;
-    Action9: TAction;
-    Action10: TAction;
-    Action11: TAction;
-    Action12: TAction;
+    Ac_Incluir: TAction;
+    Ac_Cancelar: TAction;
+    Ac_Editar: TAction;
+    Ac_Visualizar: TAction;
+    Ac_Imprimir: TAction;
+    Ac_Excluir: TAction;
+    Ac_Salvar: TAction;
+    Ac_Fechar: TAction;
+    Ac_Anterior: TAction;
+    Ac_Primeiro: TAction;
+    Ac_Proximo: TAction;
+    Ac_Ultimo: TAction;
+    SpeedButton12: TSpeedButton;
+    SpeedButton11: TSpeedButton;
+    SpeedButton10: TSpeedButton;
+    SpeedButton9: TSpeedButton;
+    MytesteConnection: TFDConnection;
+    ClienteTable: TFDQuery;
+    FDQuery1: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure Ac_SalvarUpdate(Sender: TObject);
+    procedure Ac_IncluirUpdate(Sender: TObject);
+    procedure Ac_IncluirExecute(Sender: TObject);
+    procedure Ac_CancelarExecute(Sender: TObject);
 
   private
     FCheckUnique: TDictionary<String, String>;
@@ -93,6 +104,31 @@ implementation
 
 { TFrmBaseCRUD }
 
+procedure TFrmBaseCRUD.Ac_CancelarExecute(Sender: TObject);
+begin
+  inherited;
+  DsCrud.DataSet.Cancel;
+end;
+
+procedure TFrmBaseCRUD.Ac_IncluirExecute(Sender: TObject);
+begin
+  inherited;
+   DsCrud.DataSet.Open;
+   DsCrud.DataSet.Insert;
+end;
+
+procedure TFrmBaseCRUD.Ac_IncluirUpdate(Sender: TObject);
+begin
+  inherited;
+  TAction(Sender).Enabled := not (DsCrud.State in [dsInsert, dsEdit]);
+end;
+
+procedure TFrmBaseCRUD.Ac_SalvarUpdate(Sender: TObject);
+begin
+  inherited;
+  TAction(Sender).Enabled := DsCrud.State in [dsInsert, dsEdit];
+end;
+
 procedure TFrmBaseCRUD.DOAfterScroll(DataSet: TDataSet);
 begin
   if not DsQuery.DataSet.IsEmpty then
@@ -100,7 +136,7 @@ begin
     DsCrud.DataSet.Filter := GetKeyFiled+' = '+DsQuery.DataSet.FieldByName(GetQueryKeyFiled).AsString;
     DsCrud.DataSet.Filtered := True;
     if not DsCrud.DataSet.Active then DsCrud.DataSet.Open;
-    StatusBar1.SimpleText := 'Total de Registros: '+IntToStr(DsQuery.DataSet.RecordCount);
+    StBrInfo.SimpleText := 'Total de Registros: '+IntToStr(DsQuery.DataSet.RecordCount);
   end;
 end;
 

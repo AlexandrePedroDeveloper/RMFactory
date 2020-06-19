@@ -53,7 +53,7 @@ end;
 
 procedure TFrmBaseForm.FormShow(Sender: TObject);
 begin
-  Caption := GetTitulo;
+  //Caption := GetTitulo;
 end;
 
 end.
